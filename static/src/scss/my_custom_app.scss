@@ -1,0 +1,12 @@
+.o_form_view[data-res-model="my.custom.item"] {
+  .o_form_sheet {
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  }
+
+  .btn-primary {
+    border-radius: 999px;
+    padding: 6px 16px;
+    box-shadow: none;
+  }
+}
