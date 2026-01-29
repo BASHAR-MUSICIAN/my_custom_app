@@ -4,7 +4,7 @@
       <field name="name">my.custom.item.tree</field>
       <field name="model">my.custom.item</field>
       <field name="arch" type="xml">
-        <list>
+        <list class="o_my_custom_app_list">
           <field name="name"/>
           <field name="state"/>
         </list>
@@ -15,22 +15,36 @@
       <field name="name">my.custom.item.form</field>
       <field name="model">my.custom.item</field>
       <field name="arch" type="xml">
-        <form>
+        <form class="o_my_custom_app_form">
           <header>
             <button
               name="action_mark_done"
               type="object"
               string="Mark Done"
-              class="btn-primary"
-              modifiers="{'invisible': [('state', '!=', 'draft')]}"
+              class="btn o_my_custom_app_btn o_my_custom_app_btn--done"
+            />
+            <button
+              name="action_reset_to_draft"
+              type="object"
+              string="Reset to Draft"
+              class="btn o_my_custom_app_btn o_my_custom_app_btn--reset"
+            />
+            <button
+              name="action_toggle_active"
+              type="object"
+              string="Archive"
+              class="btn o_my_custom_app_btn o_my_custom_app_btn--archive"
             />
             <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
           </header>
           <sheet>
-            <group>
-              <field name="name"/>
-              <field name="description"/>
-            </group>
+            <div class="o_my_custom_app_card">
+              <group>
+                <field name="name"/>
+                <field name="description"/>
+              </group>
+            </div>
+            <div class="o_my_custom_app_empty"/>
           </sheet>
         </form>
       </field>

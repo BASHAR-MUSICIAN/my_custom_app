@@ -1,12 +1,70 @@
-.o_form_view[data-res-model="my.custom.item"] {
+.o_my_custom_app_form {
   .o_form_sheet {
+    background: #f8f9fb;
+    border: 1px solid #e3e6ea;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
   }
+}
 
-  .btn-primary {
-    border-radius: 999px;
-    padding: 6px 16px;
-    box-shadow: none;
+.o_my_custom_app_card {
+  background: #ffffff;
+  border: 1px solid #e6e9ef;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
+  padding: 16px;
+}
+
+.o_my_custom_app_btn {
+  border-radius: 999px;
+  font-weight: 600;
+  padding: 6px 16px;
+  box-shadow: none;
+}
+
+.o_my_custom_app_btn--done {
+  background: #1f9d55;
+  border-color: #1b874a;
+  color: #ffffff;
+
+  &:hover,
+  &:focus {
+    background: #178a49;
+    border-color: #13753d;
+    color: #ffffff;
+  }
+}
+
+.o_my_custom_app_btn--reset {
+  background: #f1f3f5;
+  border-color: #d5dbe1;
+  color: #1f2937;
+
+  &:hover,
+  &:focus {
+    background: #e5e9ee;
+    border-color: #c7cfd7;
+    color: #1f2937;
+  }
+}
+
+.o_my_custom_app_btn--archive {
+  background: #fff4e6;
+  border-color: #ffd8a8;
+  color: #7c4a03;
+
+  &:hover,
+  &:focus {
+    background: #ffe8cc;
+    border-color: #ffc078;
+    color: #7c4a03;
+  }
+}
+
+.o_my_custom_app_list {
+  .o_list_table {
+    border: 1px solid #e3e6ea;
+    border-radius: 10px;
+    overflow: hidden;
   }
 }
