@@ -22,7 +22,7 @@
               type="object"
               string="Mark Done"
               class="btn-primary"
-              attrs="{'invisible': [('state', '!=', 'draft')]}"
+              modifiers="{'invisible': [('state', '!=', 'draft')]}"
             />
             <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
           </header>
