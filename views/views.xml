@@ -1,60 +1,53 @@
 <odoo>
   <data>
-    <!-- explicit list view definition -->
-<!--
-    <record model="ir.ui.view" id="my_custom_app.list">
-      <field name="name">my_custom_app list</field>
-      <field name="model">my_custom_app.my_custom_app</field>
+    <record id="view_my_custom_item_tree" model="ir.ui.view">
+      <field name="name">my.custom.item.tree</field>
+      <field name="model">my.custom.item</field>
       <field name="arch" type="xml">
         <list>
           <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
+          <field name="state"/>
         </list>
       </field>
     </record>
--->
 
-    <!-- actions opening views on models -->
-<!--
-    <record model="ir.actions.act_window" id="my_custom_app.action_window">
-      <field name="name">my_custom_app window</field>
-      <field name="res_model">my_custom_app.my_custom_app</field>
-      <field name="view_mode">list,form</field>
-    </record>
--->
-
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="my_custom_app.action_server">
-      <field name="name">my_custom_app server</field>
-      <field name="model_id" ref="model_my_custom_app_my_custom_app"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "list,form",
-          "res_model": model._name,
-        }
+    <record id="view_my_custom_item_form" model="ir.ui.view">
+      <field name="name">my.custom.item.form</field>
+      <field name="model">my.custom.item</field>
+      <field name="arch" type="xml">
+        <form>
+          <header>
+            <button
+              name="action_mark_done"
+              type="object"
+              string="Mark Done"
+              class="btn-primary"
+              attrs="{'invisible': [('state', '!=', 'draft')]}"
+            />
+            <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
+          </header>
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="description"/>
+            </group>
+          </sheet>
+        </form>
       </field>
     </record>
--->
 
-    <!-- Top menu item -->
-<!--
-    <menuitem name="my_custom_app" id="my_custom_app.menu_root"/>
--->
-    <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="my_custom_app.menu_1" parent="my_custom_app.menu_root"/>
-    <menuitem name="Menu 2" id="my_custom_app.menu_2" parent="my_custom_app.menu_root"/>
--->
-    <!-- actions -->
-<!--
-    <menuitem name="List" id="my_custom_app.menu_1_list" parent="my_custom_app.menu_1"
-              action="my_custom_app.action_window"/>
-    <menuitem name="Server to list" id="my_custom_app" parent="my_custom_app.menu_2"
-              action="my_custom_app.action_server"/>
--->
+    <record id="action_my_custom_item" model="ir.actions.act_window">
+      <field name="name">My Custom Items</field>
+      <field name="res_model">my.custom.item</field>
+      <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_my_custom_app_root" name="My Custom App"/>
+    <menuitem
+      id="menu_my_custom_item"
+      name="My Custom Items"
+      parent="menu_my_custom_app_root"
+      action="action_my_custom_item"
+    />
   </data>
 </odoo>

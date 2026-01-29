@@ -1,19 +1,23 @@
 # -*- coding: utf-8 -*-
 
-# from odoo import models, fields, api
+from odoo import fields, models
 
 
-# class my_custom_app(models.Model):
-#     _name = 'my_custom_app.my_custom_app'
-#     _description = 'my_custom_app.my_custom_app'
+class MyCustomItem(models.Model):
+    _name = "my.custom.item"
+    _description = "My Custom Item"
 
-#     name = fields.Char()
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         for record in self:
-#             record.value2 = float(record.value) / 100
+    name = fields.Char(required=True)
+    description = fields.Text()
+    state = fields.Selection(
+        selection=[
+            ("draft", "Draft"),
+            ("done", "Done"),
+        ],
+        default="draft",
+        required=True,
+    )
 
+    def action_mark_done(self):
+        for record in self:
+            record.state = "done"
