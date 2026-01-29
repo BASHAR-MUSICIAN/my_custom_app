@@ -4,10 +4,21 @@
       <field name="name">my.custom.item.tree</field>
       <field name="model">my.custom.item</field>
       <field name="arch" type="xml">
-        <list class="o_my_custom_app_list">
+        <list class="o_my_custom_app_list o_my_custom_items_tree o_my_custom_card">
           <field name="name"/>
           <field name="state"/>
         </list>
+      </field>
+    </record>
+
+    <record id="view_my_custom_item_search" model="ir.ui.view">
+      <field name="name">my.custom.item.search</field>
+      <field name="model">my.custom.item</field>
+      <field name="arch" type="xml">
+        <search class="o_my_custom_items_search">
+          <field name="name"/>
+          <field name="state"/>
+        </search>
       </field>
     </record>
 
