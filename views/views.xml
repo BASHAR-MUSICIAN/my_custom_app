@@ -15,7 +15,7 @@
       <field name="name">my.custom.item.search</field>
       <field name="model">my.custom.item</field>
       <field name="arch" type="xml">
-        <search class="o_my_custom_items_search">
+        <search>
           <field name="name"/>
           <field name="state"/>
         </search>
