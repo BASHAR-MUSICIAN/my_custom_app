@@ -144,6 +144,13 @@
     border-color: #86efac;
   }
 
+  td.o_data_cell[data-name="state"] .o_field_widget[data-tooltip="In Progress"],
+  td.o_data_cell[data-name="state"] .o_field_widget[title="In Progress"] {
+    background: #fde68a;
+    color: #92400e;
+    border-color: #f59e0b;
+  }
+
   td.o_data_cell[data-name="state"] .o_field_widget[data-tooltip="Draft"],
   td.o_data_cell[data-name="state"] .o_field_widget[title="Draft"] {
     background: #e2e8f0;
@@ -343,6 +350,13 @@
     border-color: #86efac;
   }
 
+  .o_field_widget[data-tooltip="In Progress"],
+  .o_field_widget[title="In Progress"] {
+    background: #fde68a;
+    color: #92400e;
+    border-color: #f59e0b;
+  }
+
   .o_field_widget[data-tooltip="Draft"],
   .o_field_widget[title="Draft"] {
     background: #e2e8f0;
@@ -372,6 +386,11 @@
   .o_kanban_group[data-id="draft"] .o_kanban_header {
     border-left: 4px solid #94a3b8;
     background: #f1f5f9;
+  }
+
+  .o_kanban_group[data-id="in_progress"] .o_kanban_header {
+    border-left: 4px solid #f59e0b;
+    background: #fffbeb;
   }
 
   .o_kanban_group[data-id="done"] .o_kanban_header {
