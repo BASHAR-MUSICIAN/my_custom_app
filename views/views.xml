@@ -70,7 +70,7 @@
       <field name="model">my.custom.item</field>
       <field name="arch" type="xml">
         <form class="my_custom_app_form_view">
-          <header>
+          <header class="my_custom_app_form_header">
             <button
               name="action_mark_done"
               type="object"
