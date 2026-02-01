@@ -18,12 +18,13 @@ Long description of module's purpose
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'point_of_sale', 'sale'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
         'views/views.xml',
+        'views/pos_order_views.xml',
         'views/templates.xml',
     ],
     # only loaded in demonstration mode
@@ -33,6 +34,10 @@ Long description of module's purpose
     'assets': {
         'web.assets_backend': [
             'my_custom_app/static/src/scss/my_custom_app.scss',
+        ],
+        'point_of_sale._assets_pos': [
+            'my_custom_app/static/src/scss/pos_custom.scss',
+            'my_custom_app/static/src/xml/pos_templates.xml',
         ],
     },
 }

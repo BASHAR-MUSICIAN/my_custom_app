@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+  <t t-inherit="point_of_sale.Chrome" t-inherit-mode="extension">
+    <t t-jquery=".pos-topheader" t-operation="addClass">my_custom_app_pos_header</t>
+  </t>
+  <t t-inherit="point_of_sale.ProductScreen" t-inherit-mode="extension">
+    <t t-jquery="button.pay" t-operation="addClass">my_custom_app_pos_button</t>
+  </t>
+</templates>
