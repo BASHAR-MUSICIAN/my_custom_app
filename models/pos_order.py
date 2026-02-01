@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from odoo import fields, models
+from odoo import fields, models, _
+from odoo.exceptions import UserError
 
 
 class PosOrder(models.Model):
@@ -17,7 +18,10 @@ class PosOrder(models.Model):
         if self.x_sale_order_id:
             return self._action_open_sale_order(self.x_sale_order_id)
 
-        partner = self.partner_id or self.company_id.partner_id
+        if not self.partner_id:
+            raise UserError(_("Please set a customer on the POS order before creating a Sales Order."))
+
+        partner = self.partner_id
         order_lines = []
         for line in self.lines:
             product = line.product_id

@@ -1,5 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
+  <t t-name="my_custom_app.MyCustomMainScreen" owl="1">
+    <div class="my_pos_screen">
+      <div class="my_pos_left">
+        <div class="my_pos_header_badge">Custom POS UI ON</div>
+        <div class="my_pos_section">
+          <div class="my_pos_section_title">Categories</div>
+          <div class="my_pos_tile_grid">
+            <t t-foreach="categories" t-as="category" t-key="category.id">
+              <button type="button" class="my_pos_tile" t-on-click="() => selectCategory(category.id)">
+                <span t-esc="category.name"/>
+              </button>
+            </t>
+          </div>
+        </div>
+        <div class="my_pos_section">
+          <div class="my_pos_section_title">Quick Buttons</div>
+          <div class="my_pos_quick_grid">
+            <t t-foreach="quickButtons" t-as="button" t-key="button.key">
+              <button type="button" class="my_pos_quick_button" t-on-click="() => handleQuickButton(button)">
+                <t t-esc="button.label"/>
+              </button>
+            </t>
+          </div>
+        </div>
+        <div class="my_pos_products">
+          <ProductsWidget/>
+        </div>
+      </div>
+      <div class="my_pos_center">
+        <OrderWidget/>
+      </div>
+      <div class="my_pos_right">
+        <div class="my_pos_keypad">
+          <Numpad/>
+        </div>
+        <div class="my_pos_actions">
+          <Actionpad/>
+        </div>
+      </div>
+    </div>
+  </t>
   <t t-inherit="point_of_sale.Chrome" t-inherit-mode="extension">
     <t t-jquery=".pos-topheader" t-operation="addClass">my_custom_app_pos_header</t>
   </t>
