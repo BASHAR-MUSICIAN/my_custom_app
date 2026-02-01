@@ -13,6 +13,7 @@ class MyCustomItem(models.Model):
     state = fields.Selection(
         selection=[
             ("draft", "Draft"),
+            ("in_progress", "In Progress"),
             ("done", "Done"),
         ],
         default="draft",
@@ -26,6 +27,10 @@ class MyCustomItem(models.Model):
     def action_reset_to_draft(self):
         for record in self:
             record.state = "draft"
+
+    def action_start_progress(self):
+        for record in self:
+            record.state = "in_progress"
 
     def action_toggle_active(self):
         for record in self:

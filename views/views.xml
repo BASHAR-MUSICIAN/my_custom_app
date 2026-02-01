@@ -19,6 +19,7 @@
           <field name="name"/>
           <field name="state"/>
           <filter name="draft" string="Draft" domain="[('state','=','draft')]"/>
+          <filter name="in_progress" string="In Progress" domain="[('state','=','in_progress')]"/>
           <filter name="done" string="Done" domain="[('state','=','done')]"/>
         </search>
       </field>
@@ -46,6 +47,12 @@
                 </div>
                 <div class="my_custom_app_kanban_actions">
                   <button
+                    name="action_start_progress"
+                    type="object"
+                    string="Start Progress"
+                    class="btn btn-sm my_btn_secondary"
+                  />
+                  <button
                     name="action_mark_done"
                     type="object"
                     string="Mark Done"
@@ -72,6 +79,12 @@
         <form class="my_custom_app_form_view">
           <header class="my_custom_app_form_header">
             <button
+              name="action_start_progress"
+              type="object"
+              string="Start Progress"
+              class="btn my_btn_secondary"
+            />
+            <button
               name="action_mark_done"
               type="object"
               string="Mark Done"
@@ -92,7 +105,7 @@
             <field
               name="state"
               widget="statusbar"
-              statusbar_visible="draft,done"
+              statusbar_visible="draft,in_progress,done"
               class="my_custom_app_statusbar"
             />
           </header>
