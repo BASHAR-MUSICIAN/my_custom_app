@@ -1,0 +1,23 @@
+.o_pos .my_custom_app_pos_header {
+  background: #1f2937;
+  color: #f9fafb;
+  border-bottom: 2px solid #111827;
+}
+
+.o_pos .my_custom_app_pos_header .pos-branding {
+  color: #f9fafb;
+}
+
+.o_pos .my_custom_app_pos_button {
+  background: #10b981;
+  color: #ffffff;
+  border-radius: 999px;
+  border: none;
+  padding: 0.5rem 1.1rem;
+  font-weight: 600;
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.3);
+}
+
+.o_pos .my_custom_app_pos_button:hover {
+  background: #059669;
+}
