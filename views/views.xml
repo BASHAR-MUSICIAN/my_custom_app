@@ -15,9 +15,11 @@
       <field name="name">my.custom.item.search</field>
       <field name="model">my.custom.item</field>
       <field name="arch" type="xml">
-        <search class="my_custom_app_search_view">
+        <search>
           <field name="name"/>
           <field name="state"/>
+          <filter name="draft" string="Draft" domain="[('state','=','draft')]"/>
+          <filter name="done" string="Done" domain="[('state','=','done')]"/>
         </search>
       </field>
     </record>
