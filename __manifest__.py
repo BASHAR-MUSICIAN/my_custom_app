@@ -36,6 +36,7 @@ Long description of module's purpose
             'my_custom_app/static/src/scss/my_custom_app.scss',
         ],
         'point_of_sale._assets_pos': [
+            'my_custom_app/static/src/js/pos_custom_screen.js',
             'my_custom_app/static/src/scss/pos_custom.scss',
             'my_custom_app/static/src/xml/pos_templates.xml',
         ],
